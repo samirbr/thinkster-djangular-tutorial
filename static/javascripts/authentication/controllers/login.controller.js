@@ -5,9 +5,9 @@
 (function () {
   'use strict';
 
-  // angular
-  //   .module('thinkster.authentication.controllers',  [ 'thinkster.authentication.services' ])
-  //   .controller('LoginController', LoginController);
+  angular
+    .module('thinkster.authentication.controllers')
+    .controller('LoginController', ['$location', '$scope', 'Authentication', LoginController]);
 
   // LoginController.$inject = ['$location', '$scope', 'Authentication'];
 
@@ -42,11 +42,4 @@
       Authentication.login(vm.email, vm.password);
     }
   }
-
-  
-  angular
-    .module('thinkster.authentication.controllers',  [ 'thinkster.authentication.services' ])
-    .controller('LoginController', LoginController);
-
-  LoginController.$inject = ['$location', '$scope', 'Authentication'];
 })();
